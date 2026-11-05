@@ -1,0 +1,83 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080808"><link rel="icon" type="image/png" href="assets/app-icon.png"><link rel="stylesheet" href="assets/style.css"><meta name="description" content="Halloween AI Privacy Policy explaining local app data, optional integrations, third-party services, retention and user choices."><title>Privacy Policy — Halloween AI</title></head><body><header class="site-header"><div class="container nav-wrap">
+<a class="brand" href="index.html"><img class="brand-icon" src="assets/app-icon.png" alt=""><span>HALLOWEEN <b>AI</b></span></a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+<nav class="site-nav" id="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#features">Features</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a class="nav-cta" href="mailto:support.halloweenai@gmail.com">Contact support <span>↗</span></a></nav>
+</div></header>
+<section class="doc-hero"><div class="container"><span class="section-label">Halloween AI / Legal</span><h1>Privacy Policy</h1><p class="updated">Last updated: November 6, 2026</p></div></section>
+<main class="wrap doc">
+<p>This Privacy Policy explains how the Halloween AI Android application (“Halloween AI”, “the app”, “we”, “us” or “our”) handles information when you use it. Some capabilities are processed on your device; optional online features may communicate with the providers identified below. Feature availability and data flows can vary by app release, device, build configuration, permissions and the services you choose to connect.</p>
+<div class="notice"><strong>At a glance:</strong> Core chat history, personal workspace data and supported on-device AI processing are designed to stay on your device. Some optional features send limited information to third-party providers when you use or enable them. Please read the details below.</div>
+
+<h2>1. Who to contact</h2>
+<p>Halloween AI is the product and project name used throughout this notice. The public contact for privacy questions, requests and app support is Halloween AI Support at <a href="mailto:support.halloweenai@gmail.com">support.halloweenai@gmail.com</a>. Please include “Privacy request” in the subject line and describe the request without sending passwords, access tokens, verification codes or other highly sensitive information. If a law in your location requires the identity or postal address of a specific legal entity, that information must be provided in the app-store publisher listing or another legally required notice by the responsible publisher.</p>
+
+<h2>2. Information stored on your device</h2>
+<p>Depending on the features you use, the app may store the following in Android app-private storage or device-selected locations:</p>
+<ul>
+<li><strong>Conversations:</strong> chat messages, conversation history and related metadata.</li>
+<li><strong>Personalization:</strong> memories you create, custom instructions, assistant preferences, profile name, nickname and profile picture you choose.</li>
+<li><strong>Workspace data:</strong> projects, schedules, task settings, app preferences, model settings and other configuration.</li>
+<li><strong>Files and generated content:</strong> imported files you select, generated images or other media, model files you download, and related metadata.</li>
+<li><strong>Account profile:</strong> after Google sign-in, the app receives and locally caches your Google email address, display name and profile-photo URL. An email address used for email-code sign-in is also held by the app.</li>
+<li><strong>Connected-service credentials:</strong> optional GitHub or Hugging Face credentials and service settings, where those integrations are enabled. The reviewed code uses Android secure-storage/Keystore-backed mechanisms for these tokens.</li>
+<li><strong>Crash diagnostics:</strong> if the app crashes, it creates a local diagnostic report that can include the exception, stack trace, thread details, app/device build information and model-loading context. The reviewed code saves this report locally and provides a recovery screen; it does not implement automatic crash-report upload.</li>
+</ul>
+<p>Local storage does not mean every feature is offline. When you use a network feature, the relevant data may be sent to the provider described below.</p>
+
+<h2>3. On-device AI processing</h2>
+<p>The reviewed app includes local language-model and image-generation components. When you select a compatible local model, the prompt and conversation content supplied to that model are processed on your device. The app's local chat history and workspace information are stored on the device. If you choose an online search, model download, account integration, speech service or other network feature, the information needed for that feature may leave your device as explained in this Policy.</p>
+
+<h2>4. Optional online features and third-party providers</h2>
+<h3>Google Sign-In</h3>
+<p>If you choose Google sign-in, Google Play services returns basic Google profile information requested by the app, including your email address, display name and profile photo. The app caches those details locally for account display. The reviewed Google sign-in code requests basic profile and email information; Gmail sending is a separate, additional authorization.</p>
+<h3>Gmail sending</h3>
+<p>If Gmail integration is enabled in your app release and you choose to connect it, Google presents a separate permission request for the <code>gmail.send</code> scope. This scope is intended to send messages on your behalf. The reviewed implementation calls the Gmail send endpoint and does not implement mailbox-reading, mailbox-search or message-deletion functions. When you choose to send a message, its recipient, subject and body are sent from your device to Google for delivery. Review the recipient and message before confirming. Google processes the request under its own policies. Halloween AI must use Google user data only as disclosed and in accordance with Google's API Services User Data Policy, including its Limited Use requirements.</p>
+<h3>Email-code sign-in</h3>
+<p>Email-code sign-in works only when the app is built with an OTP service URL configured. The source package supplied for review has that URL blank, so this feature is not active in that build configuration. If enabled in a release, the email address and the code you enter are sent over HTTPS to the configured verification backend. The included backend sends the code through Resend, keeps a keyed hash of the code and its expiry/attempt data temporarily in server memory, and uses the request IP address for in-memory rate limiting. Codes expire after 10 minutes, are limited to five incorrect attempts and are deleted after successful verification or expiry. The backend source does not write email addresses or codes to disk or intentionally log them. Resend receives the recipient email address and message content needed to deliver the verification email. The hosting provider may separately process connection metadata and server logs under its own terms. Production deployment settings and provider retention practices must be checked by the operator.</p>
+<h3>GitHub</h3>
+<p>GitHub integration is conditional on a GitHub OAuth client ID being configured; that value is blank in the supplied build configuration. If enabled and you connect GitHub, the app uses GitHub's device authorization flow or a token you provide, depending on the available setup. The app may request access needed for repository actions. When you ask the assistant to create an issue, the repository identifier, issue title and issue body are sent to GitHub. The reviewed code stores the connected token on the device using Android secure storage. You can disconnect in the app and should also revoke the app's authorization in your GitHub account settings.</p>
+<h3>Hugging Face</h3>
+<p>The app can contact Hugging Face to search model listings, retrieve model metadata, inspect repository files, validate an optional access token and download model files. Hugging Face may receive your IP address, requested repository/model information, download requests and a token when you use authenticated features. An optional token is stored on the device using Android secure storage. Hugging Face's own terms and privacy policy apply to its services, and each model may have its own license.</p>
+<h3>Web search</h3>
+<p>When web search is used, the search query is sent to DuckDuckGo. If you configure an optional Tavily API key, the app may send the query to Tavily first and fall back to DuckDuckGo if that request does not produce usable results. The search provider receives the query and ordinary connection metadata such as your IP address. The reviewed search implementation sends the search query rather than automatically uploading the full chat transcript to the search endpoint. Search results may contain links to websites with their own privacy practices.</p>
+<h3>Voice input and speech output</h3>
+<p>When you activate voice typing or voice conversation, the app uses Android's SpeechRecognizer and the device's text-to-speech service. The app receives recognized text and can use it as chat input. The selected speech-recognition provider may process audio or related data according to its own policy and device configuration; the app does not control that provider. The reviewed app code does not create its own persistent audio recording archive. Text entered or generated during voice conversations may become part of your local chat history in the same way as typed messages.</p>
+<h3>Model downloads, updates and external links</h3>
+<p>When you download models, check for updates, or open an external link, your device connects to the relevant hosting provider, update host or website. Those services may receive your IP address, request metadata and the resource you requested. External websites and services are governed by their own terms and privacy notices.</p>
+
+<h2>5. Permissions used by the app</h2>
+<ul>
+<li><strong>Internet and network state:</strong> account sign-in, model search/downloads, optional web search, Gmail/GitHub integrations, email verification and update checks.</li>
+<li><strong>Microphone:</strong> voice typing and voice conversation after you activate the feature and grant permission.</li>
+<li><strong>Notifications:</strong> download progress, scheduled-task results and app notifications, where enabled.</li>
+<li><strong>Foreground service, wake lock, boot receiver and alarm permissions:</strong> background work, scheduled tasks, downloads or generation workflows supported by the app.</li>
+<li><strong>File/document access:</strong> importing, attaching or saving files that you select through Android's file picker or supported storage access.</li>
+</ul>
+<p>You can manage app permissions in Android settings. If you deny a permission, the related feature may not work.</p>
+
+<h2>6. Analytics, advertising and sale of information</h2>
+<p>No advertising SDK, Firebase Analytics SDK or third-party analytics SDK was identified in the reviewed app source/configuration. The reviewed app code does not implement behavioral advertising or an automatic analytics event pipeline. This statement is limited to the supplied source package and does not cover analytics or logging that may be added by a future build, hosting provider, operating system, app store or third-party service. We do not sell personal information.</p>
+
+<h2>7. Retention and deletion</h2>
+<p>Most conversations, memories, profile details, projects, schedules, model files and generated content are stored locally and remain until you delete them, clear app data or uninstall the app, subject to Android backup/device behavior and any copies you export or save elsewhere. Use the app's available controls to clear chats, memories, profile details or downloaded models. Sign out and disconnect integrations to remove cached account details or credentials where the app provides that control. You may also revoke connected-app permissions directly with the provider.</p>
+<p>If email-code sign-in is enabled, verification records in the included backend are temporary and held in memory until successful verification, expiry or server restart. Resend and the backend host may retain delivery or operational records according to their own policies. If you send a Gmail message or create a GitHub issue, the destination provider retains that content under its own terms and account settings.</p>
+
+<h2>8. Security</h2>
+<p>The app uses Android app-private storage and Android Keystore-backed storage for certain connected-service credentials. Network requests in the reviewed integrations use HTTPS. No software, device or transmission method can be guaranteed completely secure. Keep your device and connected accounts protected, use current software, and do not share access tokens or verification codes.</p>
+
+<h2>9. Your choices and privacy requests</h2>
+<p>You can choose not to enable optional integrations, turn off web search, deny microphone permission, disconnect accounts, sign out, and delete local app content using available in-app or Android controls. You may contact us to ask a question or request help relating to personal information. Please do not email passwords, access tokens, verification codes or other highly sensitive information. We may need to verify a request before acting on it. Where applicable law grants rights to access, correct, erase, withdraw consent or complain, those rights and any applicable exceptions will apply.</p>
+
+<h2>10. Children and age-related safeguards</h2>
+<p>Halloween AI is not designed for children under 13. We do not intend to collect personal information from children under 13. If you believe a child under 13 has provided personal information, contact Halloween AI Support using the address in Section 13 so the concern can be reviewed. Use of the app by minors must also comply with the age, consent and supervision requirements that apply where they live.</p>
+
+<h2>11. International processing</h2>
+<p>Some optional providers may process information on servers located outside your country. Their processing is governed by their own privacy terms and applicable law. Before enabling an optional service, consider the provider, the information the feature needs and the provider’s published privacy and transfer terms. You can choose not to use optional online integrations.</p>
+
+<h2>12. Changes to this Policy</h2>
+<p>We may update this Policy when app features, integrations, providers or legal requirements change. The revised date will appear at the top of this page. If a material change affects how personal information is used, we will provide notice and obtain consent or offer choices where applicable law requires it.</p>
+
+<h2>13. Contact</h2>
+<p>For privacy questions or requests, email <a href="mailto:support.halloweenai@gmail.com">support.halloweenai@gmail.com</a>.</p>
+<p class="updated">This Policy describes the app’s intended and reviewed data flows. Actual behavior can change between releases; check the permissions and provider consent screens shown by the version you use.</p>
+</main><footer class="site-footer"><div class="container footer-bottom"><span>© <span id="year">2026</span> Halloween AI. All rights reserved.</span><span><a href="index.html">Home</a> · <a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:support.halloweenai@gmail.com">Support</a></span></div></footer><script src="assets/site.js" defer></script></body></html>

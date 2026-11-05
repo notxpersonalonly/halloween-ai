@@ -1,0 +1,12 @@
+HALLOWEEN AI — WEBSITE RELEASE CHECKLIST
+
+[ ] Upload the contents of this folder to the repository root.
+[ ] Keep index.html, terms.html and privacy-policy.html at the root.
+[ ] Keep assets/style.css, assets/site.js and assets/app-icon.png in assets/.
+[ ] Enable GitHub Pages from main / root.
+[ ] Confirm support.halloweenai@gmail.com is active and monitored.
+[ ] Test the homepage and navigation on desktop and mobile.
+[ ] Test FAQ accordions and all Privacy Policy / Terms links.
+[ ] Compare privacy disclosures with the exact production APK and deployed backend.
+[ ] Confirm app-store publisher identity and any legally required address disclosures.
+[ ] Obtain jurisdiction-appropriate legal review before commercial/public distribution.
