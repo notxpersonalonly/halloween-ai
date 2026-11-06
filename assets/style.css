@@ -34,3 +34,7 @@
 @media(max-width:700px){
   .philosophy-art{height:auto;aspect-ratio:2 / 1;order:2}
 }
+
+/* Single-column layout after removing the decorative artwork */
+.philosophy-grid{grid-template-columns:minmax(0,1fr);gap:0}
+.philosophy-copy{max-width:780px;margin-inline:auto;width:100%}
