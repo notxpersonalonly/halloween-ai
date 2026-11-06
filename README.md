@@ -33,3 +33,9 @@ The contact address is the address configured in the supplied website project. C
 - Test all navigation, FAQ accordions, email links, page links and mobile layout.
 
 No legal entity name, postal address, public app-store listing URL or exclusive governing-law venue was invented because those details were not present in the supplied project materials.
+
+
+## Recent website update
+- Replaced the CSS-drawn castle scene with `assets/halloween-panorama.png`, the supplied panoramic artwork.
+- Added `copyright-policy.html` and linked it from the homepage and legal-page footers.
+- Kept the existing Privacy Policy, Terms & Conditions, homepage content and `Read how privacy works` link.
